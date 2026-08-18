@@ -10,10 +10,10 @@ const AuthLayout = () => {
           </div>
         </div>
         <h2 className="mt-6 text-center text-4xl font-black text-slate-900 tracking-tight font-['Outfit']">
-          Task <span className="gradient-text">Center</span>
+          Task<span className="gradient-text">Center</span>
         </h2>
         <p className="mt-2 text-center text-sm text-slate-500 font-medium">
-          Professional micro-tasks platform
+          Africa's #1 micro-tasks earning platform
         </p>
       </div>
 

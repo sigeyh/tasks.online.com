@@ -3,6 +3,7 @@ import { useAuthStore } from './store/authStore';
 import DashboardLayout from './layouts/DashboardLayout';
 import AuthLayout from './layouts/AuthLayout';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Upgrade from './pages/Upgrade';
 import Tasks from './pages/Tasks';
@@ -20,8 +21,9 @@ function App() {
       <Routes>
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Route>
-        
+
         <Route element={
           <ProtectedRoute>
             <DashboardLayout />
