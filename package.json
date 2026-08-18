@@ -1,0 +1,8 @@
+{
+  "name": "task-online",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ]
+}
