@@ -1,43 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  body {
-    @apply bg-background text-slate-800 font-sans antialiased text-base selection:bg-primary/20 selection:text-primary-dark;
-  }
+@theme {
+  --color-primary: #0F2B5E;
+  --color-primary-light: #2a4d94;
+  --color-primary-dark: #081836;
+  --color-secondary: #149bb8;
+  --color-secondary-light: #4fbfdb;
+  --color-secondary-dark: #0c738a;
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --font-family-sans: 'Inter', 'Roboto', sans-serif;
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+  --shadow-premium: 0 10px 40px -10px rgba(15, 43, 94, 0.1), 0 0 1px rgba(15, 43, 94, 0.1);
+  --shadow-super-premium: 0 20px 50px -15px rgba(15, 43, 94, 0.15), 0 0 1px rgba(15, 43, 94, 0.15);
 }
 
-@layer utilities {
-  .glass-panel {
-    @apply bg-white/80 backdrop-blur-xl border border-white/40 shadow-premium rounded-2xl;
-  }
-  .glass-panel-dark {
-    @apply bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 shadow-premium rounded-2xl;
-  }
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
-  }
-  .mesh-bg {
-    background-color: #f8fafc;
-    background-image: 
-      radial-gradient(at 0% 0%, hsla(210,100%,94%,1) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(190,100%,92%,1) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, hsla(210,100%,94%,1) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsla(240,100%,95%,1) 0px, transparent 50%);
-  }
-  .premium-bg {
-    @apply bg-gradient-to-br from-slate-50 to-blue-50/60;
-  }
-  .shadow-soft {
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
-  }
-  .shadow-premium {
-    box-shadow: 0 10px 40px -10px rgba(15, 43, 94, 0.1), 0 0 1px rgba(15, 43, 94, 0.1);
-  }
-  .shadow-super-premium {
-    box-shadow: 0 20px 50px -15px rgba(15, 43, 94, 0.15), 0 0 1px rgba(15, 43, 94, 0.15);
-  }
+body {
+  background-color: var(--color-background);
+  color: #1e293b;
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: var(--shadow-premium);
+  border-radius: 1rem;
+}
+
+.glass-panel-dark {
+  background: rgba(15, 23, 42, 0.80);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  box-shadow: var(--shadow-premium);
+  border-radius: 1rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mesh-bg {
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(at 0% 0%, hsla(210, 100%, 94%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(190, 100%, 92%, 1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(210, 100%, 94%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(240, 100%, 95%, 1) 0px, transparent 50%);
+}
+
+.premium-bg {
+  background: linear-gradient(135deg, #f8fafc 0%, rgba(219, 234, 254, 0.6) 100%);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-premium {
+  box-shadow: var(--shadow-premium);
+}
+
+.shadow-super-premium {
+  box-shadow: var(--shadow-super-premium);
 }
